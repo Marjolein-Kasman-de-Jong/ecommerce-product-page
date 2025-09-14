@@ -1,3 +1,5 @@
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
 const [container, mainWrapper, thumbsWrapper] =
     [".swiper-container", ".mySwiper2 .swiper-wrapper", ".mySwiper .swiper-wrapper"]
         .map(id => document.querySelector(id));
