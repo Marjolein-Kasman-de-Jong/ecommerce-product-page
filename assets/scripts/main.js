@@ -1,2 +1,1 @@
-import "./modules/initializeSwiper.js";
-import "./modules/getProductInfo.js";
+import "./modules/renderProduct.js";
