@@ -57,4 +57,4 @@ export function initializeSwipers(product) {
     });
 
     return { thumbs, main };
-}
+};
