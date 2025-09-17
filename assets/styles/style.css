@@ -29,3 +29,95 @@ video {
     display: block;
     max-width: 100%;
 }
+
+/* Colors */
+
+:root {
+    --text-dark: #1D2026;
+    --text-medium: #69707D;
+    --text-light: #FFF;
+}
+
+/* Typography */
+
+html {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.heading-1 {
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 2rem;
+
+    @media screen and (min-width: 768px) {
+        font-size: 2.75rem;
+        line-height: 3rem;
+    }
+}
+
+.eyebrow {
+    color: var(--text-medium);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.11538rem;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+        font-size: 0.8125rem;
+        letter-spacing: 0.125rem;
+
+        @media screen and (min-width: 1280px) {
+            line-height: 1rem;
+        }
+    }
+}
+
+.regular-paragraph {
+    color: var(--text-medium);
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+
+    @media screen and (min-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+.final-price {
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.original-price {
+    color: var(--text-medium);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    text-decoration-line: line-through;
+}
+
+.discount {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+input[type="number"] {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+.button {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
