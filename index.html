@@ -11,49 +11,52 @@
 </head>
 
 <body>
-    <header>
-        HEADER
-    </header>
-    <main>
-        <article id="product" class="product" data-id="1">
-            <div class="swiper-container">
-                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                    <div class="swiper-wrapper">
+    <div class="wrapper">
+        <header>
+            HEADER
+        </header>
+        <main>
+            <article id="product" class="product" data-id="1">
+                <div class="swiper-container">
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                        class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-                <div thumbsSlider="" class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="product-info">
-                <header>
-                    <p id="brand" class="eyebrow">Brand</p>
-                    <h1 id="name" class="heading-1">Product name</h1>
-                </header>
-                <p id="description" class="regular-paragraph">Description</p>
-                <div class="price-wrapper">
-                    <div class="final-price-wrapper">
-                        <p id="final-price" class="final-price">Final price</p>
-                        <p id="discount" class="discount">Discount</p>
+                <div class="product-info">
+                    <header>
+                        <p id="brand" class="eyebrow">Brand</p>
+                        <h1 id="name" class="heading-1">Product name</h1>
+                    </header>
+                    <p id="description" class="regular-paragraph">Description</p>
+                    <div class="price-wrapper">
+                        <div class="final-price-wrapper">
+                            <p id="final-price" class="final-price">Final price</p>
+                            <p id="discount" class="discount">Discount</p>
+                        </div>
+                        <p id="original-price" class="original-price">
+                            Original price
+                        </p>
                     </div>
-                    <p id="original-price" class="original-price">
-                        Original price
-                    </p>
                 </div>
-            </div>
-            <form class="purchase" id="purchaseForm">
-                <input id="product-id" type="hidden" name="product-id" value="fall-limited-edition-sneakers">
-                <div class="quantity-wrapper">
-                    <label for="quantity">Quantity</label>
-                    <input id="quantity" name="quantity" type="number" min="0" step="1" value="1">
-                </div>
-                <button type="submit" class="button">Add to cart</button>
-            </form>
-        </article>
-    </main>
+                <form class="purchase" id="purchaseForm">
+                    <input id="product-id" type="hidden" name="product-id" value="fall-limited-edition-sneakers">
+                    <div class="quantity-wrapper">
+                        <label for="quantity">Quantity</label>
+                        <input id="quantity" name="quantity" type="number" min="0" step="1" value="1">
+                    </div>
+                    <button type="submit" class="button">Add to cart</button>
+                </form>
+            </article>
+        </main>
+    </div>
     <script type="module" src="assets/scripts/main.js"></script>
 </body>
 
