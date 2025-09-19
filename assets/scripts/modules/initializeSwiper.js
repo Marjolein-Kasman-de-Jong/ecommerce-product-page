@@ -41,7 +41,7 @@ export function initializeSwipers(product) {
 
     const thumbs = new Swiper(".mySwiper", {
         loop: true,
-        spaceBetween: 10,
+        spaceBetween: 32,
         slidesPerView: 4,
         freeMode: true,
         watchSlidesProgress: true,

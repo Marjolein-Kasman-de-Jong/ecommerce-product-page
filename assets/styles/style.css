@@ -36,6 +36,11 @@ video {
     --text-dark: #1D2026;
     --text-medium: #69707D;
     --text-light: #FFF;
+
+    --overlay: #FFFFFFBF;
+
+    --accent: #FF7E1B;
+    --white: #FFF;
 }
 
 /* Typography */
@@ -149,7 +154,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    
 
     @media screen and (min-width: 768px) {
         margin-top: 48px;
@@ -171,35 +175,74 @@ body {
 
         .mySwiper2 {
             .swiper-wrapper {
+                height: 300px;
+
                 @media screen and (min-width: 768px) {
                     height: 290px;
 
                     @media screen and (min-width: 1280px) {
-                        height: unset;
+                        height: 445px;
                     }
                 }
 
                 .swiper-slide {
                     position: relative;
+                    overflow: hidden;
+
+                    @media screen and (min-width: 768px) {
+                        border-radius: 15px;
+                    }
+
+                    @media (hover: hover) {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
 
                     img {
-                        @media screen and (min-width: 768px) {
-                            width: 100%;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
 
-                            @media screen and (min-width: 1280px) {
-                                width: unset;
-                                position: unset;
-                                top: unset;
-                                left: unset;
-                                transform: unset;
-                            }
+                        @media screen and (min-width: 1280px) {
+                            width: unset;
+                            position: unset;
+                            top: unset;
+                            left: unset;
+                            transform: unset;
                         }
                     }
                 }
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+                background-color: var(--white);
+                border-radius: 50%;
+
+                &::after {
+                    content: none;
+                }
+
+                @media screen and (min-width: 1280px) {
+                    display: none;
+                }
+
+                svg {
+                    width: 9px;
+                    aspect-ratio: 5.714/11.429;
+                }
+            }
+
+            .swiper-button-next {
+                right: 16px;
+            }
+
+            .swiper-button-prev {
+                left: 16px;
             }
         }
 
@@ -208,6 +251,39 @@ body {
 
             @media screen and (min-width: 1280px) {
                 display: block;
+                margin-top: 32px;
+            }
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: var(--overlay);
+                        border-radius: 10px;
+                        pointer-events: none;
+                        opacity: 0;
+                        border: 2px solid var(--accent);
+                        transition: opacity 300ms ease;
+                    }
+
+                    @media (hover: hover) {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &.swiper-slide-thumb-active::after {
+                        opacity: 1;
+                    }
+
+                    img {
+                        border-radius: 10px;
+                    }
+                }
             }
         }
     }
