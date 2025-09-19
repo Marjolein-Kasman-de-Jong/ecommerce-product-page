@@ -169,8 +169,17 @@ body {
     }
 
     .swiper-container {
-        @media screen and (min-width: 1280px) {
-            width: 43.88%;
+        max-width: 375px;
+        margin: 0 auto;
+
+        @media screen and (min-width: 768px) {
+            max-width: 608px;
+
+            @media screen and (min-width: 1280px) {
+                width: 43.88%;
+                max-width: unset;
+                margin: unset;
+            }
         }
 
         .mySwiper2 {
