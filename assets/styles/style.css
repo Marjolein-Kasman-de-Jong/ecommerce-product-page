@@ -448,11 +448,13 @@ body {
                 }
 
                 .increment {
+                    height: 100%;
                     border: none;
                     position: absolute;
                     top: 50%;
                     right: 18.5px;
                     transform: translateY(-50%);
+                    background-color: transparent;
 
                     @media screen and (min-width: 768px) {
                         right: 28px;
@@ -470,11 +472,13 @@ body {
                 }
 
                 .decrement {
+                    height: 100%;
                     border: none;
                     position: absolute;
                     top: 50%;
                     left: 18.5px;
                     transform: translateY(-50%);
+                    background-color: transparent;
 
                     @media screen and (min-width: 768px) {
                         left: 28px;
