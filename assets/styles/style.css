@@ -489,6 +489,10 @@ body {
                             cursor: pointer;
                         }
                     }
+
+                    &:disabled {
+                        opacity: .5;
+                    }
                 }
             }
 
