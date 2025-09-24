@@ -38,9 +38,24 @@ video {
     --text-light: #FFF;
 
     --overlay: #FFFFFFBF;
+    --background: #F6F8FD;
 
     --accent: #FF7E1B;
     --white: #FFF;
+}
+
+/* Utilities */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Typography */
@@ -75,7 +90,7 @@ html {
         font-size: 0.8125rem;
         letter-spacing: 0.125rem;
 
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 1200px) {
             line-height: 1rem;
         }
     }
@@ -141,7 +156,7 @@ body {
     @media screen and (min-width: 768px) {
         width: 79.17%;
 
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 1200px) {
             width: 77.08%;
             max-width: 1110px;
         }
@@ -159,7 +174,7 @@ body {
         margin-top: 48px;
         gap: 48px;
 
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 1200px) {
             width: 91.98%;
             margin: 96px auto 0 auto;
             flex-direction: row;
@@ -170,14 +185,16 @@ body {
 
     .swiper-container {
         width: 100%;
+        max-width: 500px;
         aspect-ratio: 375/300;
         margin: 0 auto;
 
         @media screen and (min-width: 768px) {
             width: 100%;
+            max-width: 800px;
             aspect-ratio: 608/290;
 
-            @media screen and (min-width: 1280px) {
+            @media screen and (min-width: 1200px) {
                 width: 43.88%;
                 aspect-ratio: 448/445;
                 margin: unset;
@@ -195,7 +212,7 @@ body {
             .swiper-wrapper {
                 height: 100%;
 
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: 1200px) {
                     max-height: 445px;
                 }
 
@@ -214,7 +231,7 @@ body {
                         left: 50%;
                         transform: translate(-50%, -50%);
 
-                        @media screen and (min-width: 1280px) {
+                        @media screen and (min-width: 1200px) {
                             width: unset;
                             position: unset;
                             top: unset;
@@ -236,7 +253,7 @@ body {
                     content: none;
                 }
 
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: 1200px) {
                     display: none;
                 }
 
@@ -258,7 +275,7 @@ body {
         .mySwiper {
             display: none;
 
-            @media screen and (min-width: 1280px) {
+            @media screen and (min-width: 1200px) {
                 display: block;
                 margin-top: 32px;
             }
@@ -299,14 +316,14 @@ body {
 
     .product-info {
         width: 87.2%;
-        max-width: 327px;
+        max-width: 436px;
         margin: 0 auto;
 
         @media screen and (min-width: 768px) {
             width: 100%;
-            max-width: 608px;
+            max-width: 800px;
 
-            @media screen and (min-width: 1280px) {
+            @media screen and (min-width: 1200px) {
                 width: 43.58%;
             }
         }
@@ -319,7 +336,7 @@ body {
             @media screen and (min-width: 768px) {
                 gap: 24px;
 
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: 1200px) {
                     gap: 32px;
                 }
             }
@@ -331,7 +348,7 @@ body {
             @media screen and (min-width: 768px) {
                 margin-top: 24px;
 
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: 1200px) {
                     margin-top: 32px;
                 }
             }
@@ -348,7 +365,7 @@ body {
                 justify-content: unset;
                 gap: 8px;
 
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: 1200px) {
                     margin-top: 32px;
                 }
             }
@@ -360,7 +377,7 @@ body {
                 @media screen and (min-width: 768px) {
                     gap: 24px;
 
-                    @media screen and (min-width: 1280px) {
+                    @media screen and (min-width: 1200px) {
                         gap: 16px;
                     }
                 }
@@ -373,6 +390,112 @@ body {
                     align-items: center;
                     border-radius: 6px;
                     background-color: var(--text-dark);
+                }
+            }
+        }
+
+        .purchase {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            @media screen and (min-width: 768px) {
+                margin-top: 24px;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 8px;
+
+                >* {
+                    flex: 1;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    margin-top: 32px;
+                    justify-content: unset;
+                    gap: 16px;
+
+                    >* {
+                        flex: unset;
+                    }
+                }
+            }
+
+            .quantity-wrapper {
+                position: relative;
+
+                input {
+                    width: 100%;
+                    height: 56px;
+                    text-align: center;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: var(--background);
+
+                    @media screen and (min-width: 1200px) {
+                        max-width: 157px;
+                    }
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    &[type=number] {
+                        -moz-appearance: textfield;
+                    }
+                }
+
+                .increment {
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    right: 18.5px;
+                    transform: translateY(-50%);
+
+                    @media screen and (min-width: 768px) {
+                        right: 28px;
+
+                        @media screen and (min-width: 1200px) {
+                            right: 13.5px;
+                        }
+                    }
+
+                    @media (hover: hover) {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .decrement {
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 18.5px;
+                    transform: translateY(-50%);
+
+                    @media screen and (min-width: 768px) {
+                        left: 28px;
+
+                        @media screen and (min-width: 1200px) {
+                            left: 13.5px;
+                        }
+                    }
+
+                    @media (hover: hover) {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .button {
+                @media screen and (min-width: 1200px) {
+                    width: 100%;
+                    max-width: 272px;
                 }
             }
         }
