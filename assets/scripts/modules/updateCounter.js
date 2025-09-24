@@ -1,28 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     const counter = document.getElementById("quantity");
-    if (!counter) return;
-
-    const value = counter.value;
     const increment = document.getElementById("increment");
     const decrement = document.getElementById("decrement");
 
-    let count = value;
+    if (!counter || !increment || !decrement) return;
 
-    function updateDecrementButton() {
+    let count = Number(counter.value);
+
+    function updateCounter(e, newValue) {
+        e.preventDefault();
+        count = newValue;
+        counter.value = count;
         decrement.disabled = count <= 0;
     }
 
-    increment.addEventListener("click", (e) => {
-        e.preventDefault();
-        count++;
-        updateDecrementButton();
-        counter.value = count;
-    });
-
-    decrement.addEventListener("click", (e) => {
-        e.preventDefault();
-        count--;
-        updateDecrementButton();
-        counter.value = count;
-    });
+    increment.addEventListener("click", (e) => updateCounter(e, count + 1));
+    decrement.addEventListener("click", (e) => updateCounter(e, count - 1));
 });
