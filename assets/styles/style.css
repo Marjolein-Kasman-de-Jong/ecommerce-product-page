@@ -41,6 +41,7 @@ video {
     --background: #F6F8FD;
 
     --accent: #FF7E1B;
+    --accent-hover: #FFAB6A;
     --accent-light: #E4E9F2;
     --white: #FFF;
 }
@@ -143,7 +144,7 @@ input[type="number"] {
     line-height: 1.625rem;
 }
 
-.nav-item  a {
+.nav-item a {
     color: var(--tex-dark);
     font-size: 1.125rem;
     font-weight: 700;
@@ -230,10 +231,10 @@ main {
             opacity: 0;
             transform: translateX(-100%);
             transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            
+
             @media screen and (min-width: 768px) {
                 width: 39.19%;
-                padding: 48px 0;    
+                padding: 48px 0;
 
                 @media screen and (min-width: 1200px) {
                     flex-direction: row;
@@ -435,7 +436,7 @@ main {
                         pointer-events: none;
                         opacity: 0;
                         border: 2px solid var(--accent);
-                        transition: opacity 300ms ease;
+                        transition: opacity 300ms ease-in-out;
                     }
 
                     @media (hover: hover) {
@@ -643,6 +644,7 @@ main {
             }
 
             .button {
+                position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -651,10 +653,18 @@ main {
                 border: none;
                 border-radius: 10px;
                 background-color: var(--accent);
+                transition: background-color 300ms ease-in-out;
 
                 @media screen and (min-width: 1200px) {
                     width: 100%;
                     max-width: 272px;
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        cursor: pointer;
+                        background-color: var(--accent-hover);
+                    }
                 }
             }
         }
