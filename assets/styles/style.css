@@ -41,6 +41,7 @@ video {
     --background: #F6F8FD;
 
     --accent: #FF7E1B;
+    --accent-light: #E4E9F2;
     --white: #FFF;
 }
 
@@ -142,6 +143,20 @@ input[type="number"] {
     line-height: 1.625rem;
 }
 
+.nav-item  a {
+    color: var(--tex-dark);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    text-decoration: none;
+
+    @media screen and (min-width: 1200px) {
+        color: var(--text-medium);
+        font-size: 0.9375rem;
+        font-weight: 400;
+    }
+}
+
 /* Main styles */
 
 body {
@@ -165,6 +180,129 @@ body {
 
 main {
     margin-bottom: 70px;
+}
+
+/* Header styles */
+
+.site-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 23.75px 24px 23.75px;
+
+    @media screen and (min-width: 768px) {
+        padding: 28px 0 32px 0;
+        border-bottom: 1px solid var(--accent-light);
+    }
+
+    .site-header-left {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+
+        @media screen and (min-width: 1200px) {
+            gap: 56px;
+        }
+
+        .menu-toggle {
+            border: none;
+            background-color: transparent;
+
+            @media screen and (min-width: 1200px) {
+                display: none;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 66.67%;
+            height: 100vh;
+            padding: 24px 24px;
+            background-color: var(--white);
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            @media screen and (min-width: 768px) {
+                width: 39.19%;
+                padding: 48px 0;    
+
+                @media screen and (min-width: 1200px) {
+                    flex-direction: row;
+                    position: unset;
+                    top: unset;
+                    left: unset;
+                    z-index: unset;
+                    width: unset;
+                    height: unset;
+                    padding: unset;
+                    display: flex;
+                    align-items: center;
+                    opacity: unset;
+                    transform: unset;
+                    transition: unset;
+                }
+            }
+
+            &.open {
+                width: 66.67%;
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .close-icon {
+                @media screen and (min-width: 1200px) {
+                    display: none;
+                }
+            }
+
+            .nav-items {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                list-style-type: none;
+
+                @media screen and (min-width: 1200px) {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 32px;
+                }
+            }
+        }
+    }
+
+    .site-header-right {
+        display: flex;
+        justify-content: flex-end;
+        gap: 24px;
+
+        @media screen and (min-width: 768px) {
+            gap: 48px;
+        }
+
+        .cart {
+            border: none;
+            background-color: transparent;
+        }
+
+        .avatar-wrapper {
+            width: 24px;
+            height: 24px;
+
+            @media screen and (min-width: 768px) {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
 }
 
 /* Product styles */
@@ -510,7 +648,7 @@ main {
                 align-items: center;
                 gap: 16px;
                 height: 56px;
-                border: none;                
+                border: none;
                 border-radius: 10px;
                 background-color: var(--accent);
 
