@@ -163,6 +163,10 @@ body {
     }
 }
 
+main {
+    margin-bottom: 70px;
+}
+
 /* Product styles */
 
 .product {
@@ -501,6 +505,15 @@ body {
             }
 
             .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                height: 56px;
+                border: none;                
+                border-radius: 10px;
+                background-color: var(--accent);
+
                 @media screen and (min-width: 1200px) {
                     width: 100%;
                     max-width: 272px;
