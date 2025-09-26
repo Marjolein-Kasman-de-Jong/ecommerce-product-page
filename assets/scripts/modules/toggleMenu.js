@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = document.getElementById("close-icon");
     const navLinks = document.querySelectorAll(".navlink");
 
-    if (!navbar || !openButton || !closeButton) return;
+    if (!navbar || !openButton || !closeButton || !navLinks) return;
 
     openButton.addEventListener("click", () => navbar.classList.add("open"));
     closeButton.addEventListener("click", () => navbar.classList.remove("open"));
