@@ -193,7 +193,9 @@ main {
     padding: 19px 23.75px 24px 23.75px;
 
     @media screen and (min-width: 768px) {
-        padding: 28px 0 32px 0;
+        /* padding: 28px 0 32px 0; */
+        height: 111px;
+        padding: unset;
         border-bottom: 1px solid var(--accent-light);
     }
 
@@ -205,6 +207,7 @@ main {
 
         @media screen and (min-width: 1200px) {
             gap: 56px;
+            height: 100%;
         }
 
         .menu-toggle {
@@ -243,7 +246,7 @@ main {
                     left: unset;
                     z-index: unset;
                     width: unset;
-                    height: unset;
+                    height: 100%;
                     padding: unset;
                     display: flex;
                     align-items: center;
@@ -272,9 +275,38 @@ main {
                 list-style-type: none;
 
                 @media screen and (min-width: 1200px) {
+                    height: 100%;
                     flex-direction: row;
                     align-items: center;
                     gap: 32px;
+                }
+
+                .nav-item {
+                    position: relative;
+
+                    @media screen and (min-width: 1200px) {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    ::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background-color: var(--accent);
+                        opacity: 0;
+                        transition: opacity 300ms ease-in-out;
+                    }
+
+                    &.active {
+                        ::before {
+                            opacity: 1;
+                        }
+                    }
                 }
             }
         }
