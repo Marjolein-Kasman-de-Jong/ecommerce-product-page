@@ -183,6 +183,41 @@ main {
     margin-bottom: 70px;
 }
 
+/* Shooping cart modal styles */
+
+.shopping-cart-modal {
+    border: 1px solid red;
+    width: 96%;
+    max-width: 360px;
+    position: absolute;
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    background-color: var(--white);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+
+    @media screen and (min-width: 768px) {
+        width: 59.21%;
+        top: 94px;
+        left: unset;
+        transform: unset;
+        right: 1.17%;
+
+        @media screen and (min-width: 1200px) {
+            width: 25%;
+            right: 6.18%;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
 /* Header styles */
 
 .site-header {
@@ -193,7 +228,6 @@ main {
     padding: 19px 23.75px 24px 23.75px;
 
     @media screen and (min-width: 768px) {
-        /* padding: 28px 0 32px 0; */
         height: 111px;
         padding: unset;
         border-bottom: 1px solid var(--accent-light);
@@ -326,6 +360,12 @@ main {
         .cart {
             border: none;
             background-color: transparent;
+
+            @media (hover:hover) {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
         }
 
         .avatar-wrapper {
