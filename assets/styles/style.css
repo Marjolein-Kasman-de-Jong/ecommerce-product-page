@@ -80,6 +80,13 @@ html {
     }
 }
 
+.heading-2 {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
 .eyebrow {
     color: var(--text-medium);
     font-size: 0.75rem;
@@ -106,6 +113,13 @@ html {
     @media screen and (min-width: 768px) {
         font-size: 1rem;
     }
+}
+
+.empty-message p {
+    color: var(--text-medium);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
 }
 
 .final-price {
@@ -183,21 +197,26 @@ main {
     margin-bottom: 70px;
 }
 
-/* Shooping cart modal styles */
+/* Shopping cart modal styles */
 
 .shopping-cart-modal {
     border: 1px solid red;
     width: 96%;
     max-width: 360px;
+    min-height: 256px;
     position: absolute;
     top: 76px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
     background-color: var(--white);
+    border-radius: 10px;
     opacity: 0;
     transition: opacity 300ms ease-in-out;
     pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
 
     @media screen and (min-width: 768px) {
         width: 59.21%;
@@ -215,6 +234,32 @@ main {
     &.active {
         opacity: 1;
         pointer-events: auto;
+    }
+
+    h2 {
+        padding: 23.5px 12px;
+        border-bottom: 1px solid var(--accent-light);
+    }
+
+    .empty-message {
+        display: none;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopping-cart-content {
+        display: block;
+    }
+
+    &.empty {
+        .empty-message {
+            display: flex;
+        }
+
+        .shopping-cart-content {
+            display: none;
+        }
     }
 }
 

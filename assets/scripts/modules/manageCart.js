@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cartButton.addEventListener("click", () => {
         cartModal.classList.toggle("active");
+
+        if (cartModal.classList.contains("active")) {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const amountOfItems = cart.reduce((sum, item) => sum + Number(item.amount), 0);
+            
+            amountOfItems <= 0 ? cartModal.classList.add("empty") : cartModal.classList.remove("empty")
+        };
     });
 
     document.addEventListener("click", (e) => {
