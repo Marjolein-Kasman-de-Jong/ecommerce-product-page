@@ -250,6 +250,7 @@ main {
 
     .shopping-cart-content {
         display: block;
+        padding: 24.5px 24px;
     }
 
     &.empty {
