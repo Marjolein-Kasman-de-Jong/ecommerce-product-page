@@ -11,16 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         if (cartModal.classList.contains("active")) {
-            // const cart = JSON.parse(localStorage.getItem("cart")) || [];
             const amountOfItems = cart.reduce((sum, item) => sum + Number(item.amount), 0);
-            
             amountOfItems <= 0 ? cartModal.classList.add("empty") : cartModal.classList.remove("empty")
         };
 
         if (cartModal.classList.contains("active") && !cartModal.classList.contains("empty")) {
             const productList = document.getElementById("product-list");
+            productList.replaceChildren();
             
-            cart.forEach(item => {
+            if (!productList) return;
+
+            cart.forEach((item) => {
                 getProductData(item.id).then(data => {
                     const productData = data;
 
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     newNode.appendChild(imageNode);
 
                     // Chekcs inbouwen voor als bepaalde data niet bestaat
+        
 
 
                     productList.appendChild(newNode);
