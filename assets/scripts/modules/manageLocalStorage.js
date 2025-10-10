@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const addToCartButton = document.getElementById("add-to-cart-button");
-
+    
     if (!addToCartButton) return;
 
     addToCartButton.addEventListener("click", (e) => {
@@ -11,11 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!productId || !amount) return;
 
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const localStorageContent = JSON.parse(localStorage.getItem("cart")) || [];
 
-        const existingItem = cart.find(item => item.id === productId);
-        existingItem ? existingItem.amount += amount : cart.push({ id: productId, amount });
+        const existingItem = localStorageContent.find(item => item.id === productId);
+        existingItem ? existingItem.amount += amount : localStorageContent.push({ id: productId, amount });
         
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(localStorageContent));
     });
 });
+
+export function removeItemFromLocalStorage(itemToRemove) {
+    const localStorageContent = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedLocalStorageContent = localStorageContent.filter(item => item.id !== itemToRemove);
+    localStorage.setItem("cart", JSON.stringify(updatedLocalStorageContent));
+};

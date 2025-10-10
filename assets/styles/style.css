@@ -87,6 +87,12 @@ html {
     line-height: 1.625rem;
 }
 
+.heading-3 {
+    color: var(--text-medium);
+    font-size: 1rem;
+    line-height: 1.625rem;
+}
+
 .eyebrow {
     color: var(--text-medium);
     font-size: 0.75rem;
@@ -139,6 +145,19 @@ html {
 
 .discount {
     color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+}
+
+.single-price {
+    color: var(--text-medium);
+    font-size: 1rem;
+    line-height: 1.625rem;
+}
+
+.total-price {
+    color: var(--text-dark);
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.625rem;
@@ -251,6 +270,42 @@ main {
     .shopping-cart-content {
         display: block;
         padding: 24.5px 24px;
+
+        .product-list {
+            list-style-type: none;
+
+            .item-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 4px;
+                }
+
+                .wrapper {
+                    width: unset;
+                    
+                    .price {
+                        display: flex;
+                        gap: 8px;
+                    }
+                }
+
+                .trash-button {
+                    width: 14px;
+                    height: 16px;
+                    background: url(../images/icon-delete.svg);
+                    border: none;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 
     &.empty {
