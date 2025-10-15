@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const cartContent = JSON.parse(localStorage.getItem("cart")) || [];
 
-        renderCart(cartContent, cartModal)
+        renderCart(cartContent, cartModal);
     });
 
     document.addEventListener("click", (e) => {

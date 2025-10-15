@@ -1,3 +1,5 @@
+import { updateItemsInCartCounter } from "./updateItemsInCartCounter.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     const addToCartButton = document.getElementById("add-to-cart-button");
     
@@ -17,11 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         existingItem ? existingItem.amount += amount : localStorageContent.push({ id: productId, amount });
         
         localStorage.setItem("cart", JSON.stringify(localStorageContent));
+
+        updateItemsInCartCounter();
     });
 });
-
-// export function removeItemFromLocalStorage(itemToRemove) {
-//     const localStorageContent = JSON.parse(localStorage.getItem("cart")) || [];
-//     const updatedLocalStorageContent = localStorageContent.filter(item => item.id !== itemToRemove);
-//     localStorage.setItem("cart", JSON.stringify(updatedLocalStorageContent));
-// };
