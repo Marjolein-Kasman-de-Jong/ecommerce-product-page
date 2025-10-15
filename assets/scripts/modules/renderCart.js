@@ -1,6 +1,6 @@
 import { getProductData } from "./getProductData.js";
 import { removeItemfromCart } from "./removeItemFromCart.js";
-import { removeItemFromLocalStorage } from "./manageLocalStorage.js";
+import { removeItemFromLocalStorage } from "./removeItemFromLocalStorage.js";
 
 export function renderCart(cartContent, cartModal) {
     if (cartModal.classList.contains("active")) {
