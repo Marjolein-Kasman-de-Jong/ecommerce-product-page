@@ -44,6 +44,7 @@ video {
     --accent-hover: #FFAB6A;
     --accent-light: #E4E9F2;
     --white: #FFF;
+    --black: #000;
 }
 
 /* Utilities */
@@ -213,6 +214,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .wrapper {
@@ -891,5 +893,21 @@ main {
                 }
             }
         }
+    }
+}
+
+/* Lightbox styles */
+
+.lightbox {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--black);
+    opacity: .75;
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
     }
 }
