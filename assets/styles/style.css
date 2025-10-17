@@ -905,6 +905,7 @@ main {
     min-height: 100vh;
     background-color: var(--black);
     opacity: .75;
+    transition: opacity 300ms ease-in-out;
 
     &.hidden {
         opacity: 0;
