@@ -1,7 +1,10 @@
 import { renderCart } from "./renderCart.js";
 
-export function removeItemfromCart(itemId, cartModal) {
+export function removeItemfromCart(itemId, cartPanel) {
+    if (!itemId || !cartPanel) return;
+
     const itemsInCart = document.querySelectorAll(".item-wrapper");
+
     const itemToRemove = Array.from(itemsInCart).find(
         item => item.dataset.id === String(itemId)
     );
@@ -10,5 +13,5 @@ export function removeItemfromCart(itemId, cartModal) {
 
     const updatedCartContent = JSON.parse(localStorage.getItem("cart")) || [];
 
-    renderCart(updatedCartContent, cartModal);
+    renderCart(updatedCartContent, cartPanel);
 };

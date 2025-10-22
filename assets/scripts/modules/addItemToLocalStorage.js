@@ -1,25 +1,15 @@
-import { updateItemsInCartCounter } from "./updateItemsInCartCounter.js";
+export function addItemToLocalStorage(e) {
+    e.preventDefault();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const addToCartButton = document.getElementById("add-to-cart-button");
-    
-    if (!addToCartButton) return;
+    const productId = Number(document.getElementById("product").dataset.id);
+    const amount = Number(document.getElementById("quantity").value);
 
-    addToCartButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        
-        const productId = Number(document.getElementById("product").dataset.id);
-        const amount = Number(document.getElementById("quantity").value);
+    if (!productId || !amount) return;
 
-        if (!productId || !amount) return;
+    const localStorageContent = JSON.parse(localStorage.getItem("cart")) || [];
 
-        const localStorageContent = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = localStorageContent.find(item => item.id === productId);
+    existingItem ? existingItem.amount += amount : localStorageContent.push({ id: productId, amount });
 
-        const existingItem = localStorageContent.find(item => item.id === productId);
-        existingItem ? existingItem.amount += amount : localStorageContent.push({ id: productId, amount });
-        
-        localStorage.setItem("cart", JSON.stringify(localStorageContent));
-
-        updateItemsInCartCounter();
-    });
-});
+    localStorage.setItem("cart", JSON.stringify(localStorageContent));
+};

@@ -1,16 +1,14 @@
 export function updateItemsInCartCounter () {
-    const counter = document.getElementById("items-in-cart");
-    const counterContent = document.getElementById("amount");
+    const itemsInCartCounter = document.getElementById("items-in-cart");
+    const itemsInCartCounterContent = document.getElementById("amount");
     const cartContent = JSON.parse(localStorage.getItem("cart")) || [];
     const itemsInCart = cartContent.reduce((sum, item) => sum + item.amount, 0);
 
-    counterContent.textContent = itemsInCart;
+    itemsInCartCounterContent.textContent = itemsInCart;
 
     if (itemsInCart <= 0) {
-        counter.classList.add("hidden");
+        itemsInCartCounter.classList.add("hidden");
     } else {
-        counter.classList.remove("hidden");
+        itemsInCartCounter.classList.remove("hidden");
     }
-}
-
-updateItemsInCartCounter();
+};

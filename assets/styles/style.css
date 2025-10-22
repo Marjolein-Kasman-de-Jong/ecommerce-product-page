@@ -234,9 +234,9 @@ main {
     margin-bottom: 70px;
 }
 
-/* Shopping cart modal styles */
+/* Shopping cart panel styles */
 
-.shopping-cart-modal {
+.shopping-cart-panel {
     width: 96%;
     max-width: 360px;
     min-height: 256px;

@@ -2,13 +2,13 @@ import { getProductData } from "./getProductData.js";
 import { removeItemfromCart } from "./removeItemFromCart.js";
 import { removeItemFromLocalStorage } from "./removeItemFromLocalStorage.js";
 
-export function renderCart(cartContent, cartModal) {
-    if (cartModal.classList.contains("active")) {
+export function renderCart(cartContent, cartPanel) {
+    if (cartPanel.classList.contains("active")) {
         const amountOfItems = cartContent.reduce((sum, item) => sum + Number(item.amount), 0);
-        amountOfItems <= 0 ? cartModal.classList.add("empty") : cartModal.classList.remove("empty")
+        amountOfItems <= 0 ? cartPanel.classList.add("empty") : cartPanel.classList.remove("empty")
     };
 
-    if (cartModal.classList.contains("active") && !cartModal.classList.contains("empty")) {
+    if (cartPanel.classList.contains("active") && !cartPanel.classList.contains("empty")) {
         const productList = document.getElementById("product-list");
 
         if (!productList) return;
@@ -97,7 +97,7 @@ export function renderCart(cartContent, cartModal) {
                     const itemToRemove = Number(trashNode.closest(".item-wrapper").dataset.id);
 
                     removeItemFromLocalStorage(itemToRemove);
-                    removeItemfromCart(itemToRemove, cartModal);
+                    removeItemfromCart(itemToRemove, cartPanel);
                 });
 
                 priceNode.append(singlePriceNode, totalPriceNode);
