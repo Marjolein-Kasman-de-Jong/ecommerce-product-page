@@ -906,6 +906,13 @@ main {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.75);
     transition: background-color 300ms ease-in-out, opacity 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 1199px) {
+        display: none;
+    }
 
     &.hidden {
         opacity: 0;
@@ -918,6 +925,7 @@ main {
         max-width: 500px;
         aspect-ratio: 375/300;
         margin: 0 auto;
+        position: relative;
 
         @media screen and (min-width: 768px) {
             width: 100%;
@@ -925,9 +933,24 @@ main {
             aspect-ratio: 608/290;
 
             @media screen and (min-width: 1200px) {
-                width: 43.88%;
+                width: 38.19%;
                 aspect-ratio: 448/445;
                 margin: unset;
+            }
+        }
+
+        #close-modal {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 0 0 24px auto;
+            background-color: transparent;
+            border: none;
+
+            @media (hover: hover) {
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
 
@@ -971,35 +994,33 @@ main {
                     }
                 }
             }
+        }
 
-            .swiper-button-next,
-            .swiper-button-prev {
-                width: 40px;
-                height: 40px;
-                background-color: var(--white);
-                border-radius: 50%;
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 56px;
+            height: 56px;
+            background-color: var(--white);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
 
-                &::after {
-                    content: none;
-                }
-
-                @media screen and (min-width: 1200px) {
-                    display: none;
-                }
-
-                svg {
-                    width: 9px;
-                    aspect-ratio: 5.714/11.429;
-                }
+            &::after {
+                content: none;
             }
 
-            .swiper-button-next {
-                right: 16px;
+            svg {
+                width: 9px;
+                aspect-ratio: 5.714/11.429;
             }
+        }
 
-            .swiper-button-prev {
-                left: 16px;
-            }
+        .swiper-button-next {
+            right: -28px;
+        }
+
+        .swiper-button-prev {
+            left: -28px;
         }
 
         .mySwiper {
@@ -1007,7 +1028,7 @@ main {
 
             @media screen and (min-width: 1200px) {
                 display: block;
-                margin-top: 32px;
+                margin: 40px 51px 0 51px;
             }
 
             .swiper-wrapper {
