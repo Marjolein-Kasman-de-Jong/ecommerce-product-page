@@ -903,12 +903,13 @@ main {
     z-index: 100;
     width: 100%;
     min-height: 100vh;
-    background-color: var(--black);
-    opacity: .75;
-    transition: opacity 300ms ease-in-out;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: background-color 300ms ease-in-out, opacity 300ms ease-in-out;
 
     &.hidden {
         opacity: 0;
+        background-color: rgba(0, 0, 0, 0);
         pointer-events: none;
     }
 
