@@ -921,23 +921,12 @@ main {
     }
 
     .swiper-container {
-        width: 100%;
-        max-width: 500px;
-        aspect-ratio: 375/300;
         margin: 0 auto;
         position: relative;
-
-        @media screen and (min-width: 768px) {
-            width: 100%;
-            max-width: 800px;
-            aspect-ratio: 608/290;
-
-            @media screen and (min-width: 1200px) {
-                width: 38.19%;
-                aspect-ratio: 448/445;
-                margin: unset;
-            }
-        }
+        width: 38.19%;
+        max-width: 550px;
+        aspect-ratio: 448/445;
+        margin: unset;
 
         #close-modal {
             display: block;
@@ -956,18 +945,12 @@ main {
 
         .mySwiper2 {
             height: 100%;
-
-            @media screen and (min-width: 768px) {
-                border-radius: 15px;
-                overflow: hidden;
-            }
+            border-radius: 15px;
+            overflow: hidden;
 
             .swiper-wrapper {
                 height: 100%;
-
-                @media screen and (min-width: 1200px) {
-                    max-height: 445px;
-                }
+                max-height: 445px;
 
                 .swiper-slide {
                     position: relative;
@@ -980,17 +963,11 @@ main {
 
                     img {
                         position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-
-                        @media screen and (min-width: 1200px) {
-                            width: unset;
-                            position: unset;
-                            top: unset;
-                            left: unset;
-                            transform: unset;
-                        }
+                        width: unset;
+                        position: unset;
+                        top: unset;
+                        left: unset;
+                        transform: unset;
                     }
                 }
             }
@@ -1024,12 +1001,8 @@ main {
         }
 
         .mySwiper {
-            display: none;
-
-            @media screen and (min-width: 1200px) {
-                display: block;
-                margin: 40px 51px 0 51px;
-            }
+            display: block;
+            margin: 40px 51px 0 51px;
 
             .swiper-wrapper {
                 .swiper-slide {
