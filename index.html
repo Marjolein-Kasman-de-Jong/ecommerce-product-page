@@ -82,7 +82,7 @@
         </header>
         <main>
             <article id="product" class="product" data-id="1">
-                <div class="swiper-container">
+                <div class="swiper-container" data-scope="gallery">
                     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                         class="swiper mySwiper2">
                         <div class="swiper-wrapper">
@@ -164,6 +164,26 @@
     </div>
     <div id="lightbox" class="lightbox hidden">
         <button type="button" id="close-modal">close</button>
+        <div class="swiper-container" data-scope="modal">
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                </div>
+                <div class="swiper-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="14" viewBox="0 0 10 14" fill="none">
+                        <path d="M2 1.28571L7.71429 6.99999L2 12.7143" stroke="#1D2026" stroke-width="3" />
+                    </svg>
+                </div>
+                <div class="swiper-button-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                        <path d="M7.85718 1.28571L2.14289 6.99999L7.85718 12.7143" stroke="#1D2026" stroke-width="3" />
+                    </svg>
+                </div>
+            </div>
+            <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                </div>
+            </div>
+        </div>
     </div>
     <script type="module" src="assets/scripts/main.js"></script>
 </body>

@@ -1,11 +1,15 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 import { openLightBox } from './toggleLightbox.js';
 
-const [container, mainWrapper, thumbsWrapper] =
-    [".swiper-container", ".mySwiper2 .swiper-wrapper", ".mySwiper .swiper-wrapper"]
-        .map(id => document.querySelector(id));
+function setSwiperContent(scope, product) {
+    const [container, mainWrapper, thumbsWrapper] =
+        [
+            `.swiper-container[data-scope="${scope}"]`,
+            `.swiper-container[data-scope="${scope}"] .mySwiper2 .swiper-wrapper`,
+            `.swiper-container[data-scope="${scope}"] .mySwiper .swiper-wrapper`
+        ]
+            .map(id => document.querySelector(id));
 
-function setSwiperContent(product) {
     const imgs = Array.isArray(product.images) ? product.images : [];
 
     if (imgs.length === 0) {
@@ -38,10 +42,20 @@ function setSwiperContent(product) {
     }
 };
 
-export function initializeSwipers(product) {
-    setSwiperContent(product);
+export function initializeSwipers(scope, product) {
+    const existingSwipers = document.querySelectorAll(
+        `.swiper-container[data-scope="${scope}"] .swiper`
+    );
 
-    const thumbs = new Swiper(".mySwiper", {
+    existingSwipers.forEach(container => {
+        if (container.swiper) {
+            container.swiper.destroy(true, true);
+        }
+    });
+    
+    setSwiperContent(scope, product);
+
+    const thumbs = new Swiper(`.swiper-container[data-scope="${scope}"] .mySwiper`, {
         loop: true,
         spaceBetween: 32,
         slidesPerView: 4,
@@ -50,7 +64,7 @@ export function initializeSwipers(product) {
         slideToClickedSlide: true,
     });
 
-    const main = new Swiper(".mySwiper2", {
+    const main = new Swiper(`.swiper-container[data-scope="${scope}"] .mySwiper2`, {
         loop: true,
         spaceBetween: 10,
         navigation: {

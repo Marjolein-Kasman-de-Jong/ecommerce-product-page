@@ -5,6 +5,6 @@ import { setProductDetails } from "./setProductDetails.js";
 const id = Number(document.getElementById("product").dataset.id);
 
 getProductData(id).then(product => {
-    initializeSwipers(product);
+    initializeSwipers("gallery", product);
     setProductDetails(product);
 });

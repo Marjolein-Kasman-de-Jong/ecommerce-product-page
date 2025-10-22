@@ -911,4 +911,135 @@ main {
         opacity: 0;
         pointer-events: none;
     }
+
+    .swiper-container {
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 375/300;
+        margin: 0 auto;
+
+        @media screen and (min-width: 768px) {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 608/290;
+
+            @media screen and (min-width: 1200px) {
+                width: 43.88%;
+                aspect-ratio: 448/445;
+                margin: unset;
+            }
+        }
+
+        .mySwiper2 {
+            height: 100%;
+
+            @media screen and (min-width: 768px) {
+                border-radius: 15px;
+                overflow: hidden;
+            }
+
+            .swiper-wrapper {
+                height: 100%;
+
+                @media screen and (min-width: 1200px) {
+                    max-height: 445px;
+                }
+
+                .swiper-slide {
+                    position: relative;
+
+                    @media (hover: hover) {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        @media screen and (min-width: 1200px) {
+                            width: unset;
+                            position: unset;
+                            top: unset;
+                            left: unset;
+                            transform: unset;
+                        }
+                    }
+                }
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+                background-color: var(--white);
+                border-radius: 50%;
+
+                &::after {
+                    content: none;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    display: none;
+                }
+
+                svg {
+                    width: 9px;
+                    aspect-ratio: 5.714/11.429;
+                }
+            }
+
+            .swiper-button-next {
+                right: 16px;
+            }
+
+            .swiper-button-prev {
+                left: 16px;
+            }
+        }
+
+        .mySwiper {
+            display: none;
+
+            @media screen and (min-width: 1200px) {
+                display: block;
+                margin-top: 32px;
+            }
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: var(--overlay);
+                        border-radius: 10px;
+                        pointer-events: none;
+                        opacity: 0;
+                        border: 2px solid var(--accent);
+                        transition: opacity 300ms ease-in-out;
+                    }
+
+                    @media (hover: hover) {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &.swiper-slide-thumb-active::after {
+                        opacity: 1;
+                    }
+
+                    img {
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
