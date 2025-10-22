@@ -22,12 +22,15 @@ function setSwiperContent(scope, product) {
     mainWrapper.innerHTML = "";
     thumbsWrapper.innerHTML = "";
 
+    let index = 0;
+
     for (const img of imgs) {
         const mainSlide = document.createElement("div");
         mainSlide.className = "swiper-slide";
         const mainImg = document.createElement("img");
         mainImg.src = img.src;
         mainImg.alt = img.alt || product.name || "";
+        mainImg.dataset.index = index;
         mainImg.addEventListener("click", openLightBox);
         mainSlide.appendChild(mainImg);
         mainWrapper.appendChild(mainSlide);
@@ -39,6 +42,8 @@ function setSwiperContent(scope, product) {
         thumbImg.alt = img.alt || product.name || "";
         thumbSlide.appendChild(thumbImg);
         thumbsWrapper.appendChild(thumbSlide);
+
+        index++;
     }
 };
 
