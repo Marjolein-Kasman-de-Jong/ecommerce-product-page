@@ -1038,3 +1038,32 @@ main {
         }
     }
 }
+
+/* 
+  Prevents all unwanted blue highlight effects (text selection, image drag,
+  and selection overlays) anywhere on the page while the lightbox is open.
+  This fixes both:
+    1) Blue blocks appearing over images in the lightbox when navigating or swiping.
+    2) Blue text-selection highlights on elements behind the lightbox 
+       (like the "Add to cart" button).
+  Normal selection behavior is automatically restored once the lightbox is closed.
+
+  Class is toggled in toggleLightbox.js.
+*/
+
+html.lightbox-open,
+html.lightbox-open * {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.lightbox-open img {
+  -webkit-user-drag: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox input, .lightbox textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
