@@ -439,6 +439,10 @@ main {
                 @media screen and (min-width: 1200px) {
                     display: none;
                 }
+
+                svg {
+                    pointer-events: none;
+                }
             }
 
             .nav-items {

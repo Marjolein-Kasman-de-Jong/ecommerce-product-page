@@ -1,5 +1,3 @@
-import "./modules/toggleMenu.js";
-
 import { addItemToLocalStorage } from "./modules/addItemToLocalStorage.js";
 import { updateItemsInCartCounter } from "./modules/updateItemsInCartCounter.js";
 import { openCartPanel } from "./modules/openCartPanel.js";
@@ -8,11 +6,16 @@ import { setNavLinkActiveState } from "./modules/setNavLinkActiveState.js";
 import { updateCounter } from "./modules/updateCounter.js";
 import { renderProduct } from "./modules/renderProduct.js";
 import { closeLightbox } from "./modules/closeLightbox.js";
+import { openMenu } from "./modules/openMenu.js";
+import { closeMenu } from "./modules/closeMenu.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const addToCartButton = document.getElementById("add-to-cart-button");
     const cartButton = document.getElementById("cart");
     const cartPanel = document.getElementById("shopping-cart-panel");
+    const navbar = document.getElementById("navbar");
+    const openMenuButton = document.getElementById("menu-toggle");
+    const closeMenuButton = document.getElementById("close-icon");
     const navLinks = document.querySelectorAll(".navlink");
     const counter = document.getElementById("quantity");
     const increment = document.getElementById("increment");
@@ -35,6 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLinks.forEach(navLink => {
         setNavLinkActiveState(navLinks, navLink);
+
+        navLink.addEventListener("click", (e) => {
+            closeMenu(e, navbar, openMenuButton);
+        });
     });
 
     increment.addEventListener("click", (e) => {
@@ -48,8 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
     closeLightboxButton.addEventListener("click", () => {
         closeLightbox();
     });
+
+    openMenuButton.addEventListener("click", () => openMenu(navbar));
+
+    closeMenuButton.addEventListener("click", (e) => {
+        closeMenu(e, navbar, openMenuButton)
+    });
     
     document.addEventListener("click", (e) => {
         closeCartPanel(e, cartButton, cartPanel);
+        closeMenu(e, navbar, openMenuButton);
     });
 });
