@@ -3,6 +3,8 @@ import { removeItemfromCart } from "./removeItemFromCart.js";
 import { removeItemFromLocalStorage } from "./removeItemFromLocalStorage.js";
 
 export function renderCart(cartContent, cartPanel) {
+    if (!cartContent || !cartPanel) return;
+
     if (cartPanel.classList.contains("active")) {
         const amountOfItems = cartContent.reduce((sum, item) => sum + Number(item.amount), 0);
         amountOfItems <= 0 ? cartPanel.classList.add("empty") : cartPanel.classList.remove("empty")

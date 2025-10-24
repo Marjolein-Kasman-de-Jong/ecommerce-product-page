@@ -2,9 +2,11 @@ import { getProductData } from "./getProductData.js";
 import { initializeSwipers } from "./initializeSwiper.js";
 import { setProductDetails } from "./setProductDetails.js";
 
-const id = Number(document.getElementById("product").dataset.id);
+export async function renderProduct(productId) {
+    if (!productId) return;
 
-getProductData(id).then(product => {
+    const product = await getProductData(productId);
+    
     initializeSwipers("gallery", product);
     setProductDetails(product);
-});
+};

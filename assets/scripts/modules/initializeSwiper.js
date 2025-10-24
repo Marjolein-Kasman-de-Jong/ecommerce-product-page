@@ -1,5 +1,5 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-import { openLightBox } from './toggleLightbox.js';
+import { openLightBox } from './openLightbox.js';
 
 function setSwiperContent(scope, product) {
     const [container, mainWrapper, thumbsWrapper] =
@@ -31,7 +31,7 @@ function setSwiperContent(scope, product) {
         mainImg.src = img.src;
         mainImg.alt = img.alt || product.name || "";
         mainImg.dataset.index = index;
-        mainImg.addEventListener("click", openLightBox);
+        mainImg.addEventListener("click", (e) => openLightBox(e));
         mainSlide.appendChild(mainImg);
         mainWrapper.appendChild(mainSlide);
 

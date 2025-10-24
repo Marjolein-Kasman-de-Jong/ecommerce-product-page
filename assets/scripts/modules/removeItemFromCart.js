@@ -5,6 +5,8 @@ export function removeItemfromCart(itemId, cartPanel) {
 
     const itemsInCart = document.querySelectorAll(".item-wrapper");
 
+    if (!itemsInCart) return;
+
     const itemToRemove = Array.from(itemsInCart).find(
         item => item.dataset.id === String(itemId)
     );

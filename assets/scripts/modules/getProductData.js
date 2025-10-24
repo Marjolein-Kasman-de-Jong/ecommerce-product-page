@@ -1,4 +1,4 @@
-export async function getProductData(id) {
+export async function getProductData(productId) {
     const response = await fetch("./data/products.json");
 
     if (!response.ok) {
@@ -7,10 +7,10 @@ export async function getProductData(id) {
 
     const data = await response.json();
 
-    const product = data.find(item => item.id === id);
+    const product = data.find(item => item.id === productId);
 
     if (!product) {
-        throw new Error(`Geen product gevonden met id ${id}`);
+        throw new Error(`Geen product gevonden met id ${productId}`);
     }
 
     return product;
