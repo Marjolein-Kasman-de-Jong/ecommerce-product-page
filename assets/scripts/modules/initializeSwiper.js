@@ -14,7 +14,6 @@ function setSwiperContent(scope, product) {
 
     if (imgs.length === 0) {
         container.hidden = true;
-        return;
     }
 
     container.hidden = false;
@@ -27,19 +26,23 @@ function setSwiperContent(scope, product) {
     for (const img of imgs) {
         const mainSlide = document.createElement("div");
         mainSlide.className = "swiper-slide";
+
         const mainImg = document.createElement("img");
         mainImg.src = img.src;
         mainImg.alt = img.alt || product.name || "";
         mainImg.dataset.index = index;
         mainImg.addEventListener("click", (e) => openLightBox(e));
+
         mainSlide.appendChild(mainImg);
         mainWrapper.appendChild(mainSlide);
 
         const thumbSlide = document.createElement("div");
         thumbSlide.className = "swiper-slide";
+
         const thumbImg = document.createElement("img");
         thumbImg.src = img.thumb || img.src;
         thumbImg.alt = img.alt || product.name || "";
+        
         thumbSlide.appendChild(thumbImg);
         thumbsWrapper.appendChild(thumbSlide);
 
