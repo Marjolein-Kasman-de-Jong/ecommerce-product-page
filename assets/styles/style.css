@@ -306,6 +306,7 @@ main {
 
                 .wrapper {
                     width: unset;
+                    margin-top: unset;
 
                     .price {
                         display: flex;
