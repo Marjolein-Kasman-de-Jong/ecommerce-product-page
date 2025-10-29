@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const increment = document.getElementById("increment");
     const decrement = document.getElementById("decrement");
     const closeLightboxButton = document.getElementById("close-modal");
+    const avatarWrapper = document.getElementById("avatar-wrapper");
 
     const productId = Number(document.getElementById("product").dataset.id);
 
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     cartButton.addEventListener("click", () => {
-        openCartPanel(cartPanel);
+        openCartPanel(cartPanel, avatarWrapper);
     });
 
     navLinks.forEach(navLink => {
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     document.addEventListener("click", (e) => {
-        closeCartPanel(e, cartButton, cartPanel);
+        closeCartPanel(e, cartButton, cartPanel, avatarWrapper);
         closeMenu(e, navbar, openMenuButton);
     });
 });
