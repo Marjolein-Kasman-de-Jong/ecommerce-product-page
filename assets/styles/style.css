@@ -694,6 +694,11 @@ main {
                     @media (hover: hover) {
                         &:hover {
                             cursor: pointer;
+
+                            &::after {
+                                opacity: 1;
+                                border: none;
+                            }
                         }
                     }
 
@@ -1071,6 +1076,11 @@ main {
                     @media (hover: hover) {
                         &:hover {
                             cursor: pointer;
+
+                            &::after {
+                                opacity: 1;
+                                border: none;
+                            }
                         }
                     }
 
