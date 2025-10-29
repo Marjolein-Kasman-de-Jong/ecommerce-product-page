@@ -935,7 +935,7 @@ main {
                     max-width: 272px;
                 }
 
-                @media (hover: hover) {
+                @media (hover: hover) and (pointer: fine) {
                     &:hover {
                         cursor: pointer;
                         background-color: var(--accent-hover);
