@@ -610,6 +610,10 @@ main {
                 width: 43.88%;
                 aspect-ratio: 448/445;
                 margin: unset;
+
+                @supports (-moz-appearance: none) {
+                    height: calc(100% * (445 / 448));
+                }
             }
         }
 
