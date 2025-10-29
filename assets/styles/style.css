@@ -963,9 +963,18 @@ main {
             background-color: transparent;
             border: none;
 
+            svg {
+                fill: var(--white);
+                transition: fill 0.3s ease-in-out;
+            }
+
             @media (hover: hover) {
                 &:hover {
                     cursor: pointer;
+
+                    svg {
+                        fill: var(--accent);
+                    }
                 }
             }
         }
@@ -1016,6 +1025,18 @@ main {
             svg {
                 width: 9px;
                 aspect-ratio: 5.714/11.429;
+                stroke: var(--text-dark);
+                transition: stroke 0.3s ease-in-out;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    cursor: pointer;
+
+                    svg {
+                        stroke: var(--accent);
+                    }
+                }
             }
         }
 
@@ -1080,17 +1101,18 @@ main {
 
 html.lightbox-open,
 html.lightbox-open * {
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html.lightbox-open img {
-  -webkit-user-drag: none;
-  -webkit-user-drag: none;
+    -webkit-user-drag: none;
+    -webkit-user-drag: none;
 }
 
-.lightbox input, .lightbox textarea {
-  user-select: text;
-  -webkit-user-select: text;
+.lightbox input,
+.lightbox textarea {
+    user-select: text;
+    -webkit-user-select: text;
 }
