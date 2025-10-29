@@ -320,8 +320,10 @@ main {
                     background: url(../images/icon-delete.svg);
                     border: none;
 
-                    &:hover {
-                        cursor: pointer;
+                    @media (hover: hover) and (pointer: fine) {
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -337,7 +339,7 @@ main {
         margin: 0 auto;
         transition: background-color 300ms ease-in-out;
 
-        @media (hover: hover) {
+        @media (hover: hover) and (pointer: fine) {
             &:hover {
                 cursor: pointer;
                 background-color: var(--accent-hover);
@@ -528,7 +530,7 @@ main {
             background-color: transparent;
             position: relative;
 
-            @media (hover:hover) {
+            @media (hover:hover) and (pointer: fine) {
                 &:hover {
                     cursor: pointer;
                 }
@@ -632,7 +634,7 @@ main {
                 .swiper-slide {
                     position: relative;
 
-                    @media (hover: hover) {
+                    @media (hover: hover) and (pointer: fine) {
                         &:hover {
                             cursor: pointer;
                         }
@@ -709,7 +711,7 @@ main {
                         transition: opacity 300ms ease-in-out;
                     }
 
-                    @media (hover: hover) {
+                    @media (hover: hover) and (pointer: fine) {
                         &:hover {
                             cursor: pointer;
 
@@ -882,7 +884,7 @@ main {
                         }
                     }
 
-                    @media (hover: hover) {
+                    @media (hover: hover) and (pointer: fine) {
                         &:hover {
                             cursor: pointer;
                         }
@@ -906,7 +908,7 @@ main {
                         }
                     }
 
-                    @media (hover: hover) {
+                    @media (hover: hover) and (pointer: fine) {
                         &:hover {
                             cursor: pointer;
                         }
@@ -991,7 +993,7 @@ main {
                 transition: fill 0.3s ease-in-out;
             }
 
-            @media (hover: hover) {
+            @media (hover: hover) and (pointer: fine) {
                 &:hover {
                     cursor: pointer;
 
@@ -1014,7 +1016,7 @@ main {
                 .swiper-slide {
                     position: relative;
 
-                    @media (hover: hover) {
+                    @media (hover: hover) and (pointer: fine) {
                         &:hover {
                             cursor: pointer;
                         }
@@ -1052,7 +1054,7 @@ main {
                 transition: stroke 0.3s ease-in-out;
             }
 
-            @media (hover: hover) {
+            @media (hover: hover) and (pointer: fine) {
                 &:hover {
                     cursor: pointer;
 
@@ -1091,7 +1093,7 @@ main {
                         transition: opacity 300ms ease-in-out;
                     }
 
-                    @media (hover: hover) {
+                    @media (hover: hover) and (pointer: fine) {
                         &:hover {
                             cursor: pointer;
 
