@@ -433,7 +433,7 @@ main {
 
             @media screen and (min-width: 768px) {
                 width: 39.19%;
-                padding: 48px 0;
+                padding: 48px 80px;
 
                 @media screen and (min-width: 1200px) {
                     flex-direction: row;
@@ -453,7 +453,6 @@ main {
             }
 
             &.open {
-                width: 66.67%;
                 opacity: 1;
                 transform: translateX(0);
             }
