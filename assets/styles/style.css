@@ -242,7 +242,7 @@ main {
     width: 96%;
     max-width: 360px;
     min-height: 256px;
-    position: absolute;
+    position: fixed;
     top: 76px;
     left: 50%;
     transform: translateX(-50%);
