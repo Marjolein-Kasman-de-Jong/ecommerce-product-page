@@ -219,9 +219,11 @@ body {
 
 .wrapper {
     width: 100%;
+    margin-top: 67px;
 
     @media screen and (min-width: 768px) {
         width: 79.17%;
+        margin-top: 110px;
 
         @media screen and (min-width: 1200px) {
             width: 77.08%;
@@ -360,16 +362,37 @@ main {
 /* Header styles */
 
 .site-header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 19px 23.75px 24px 23.75px;
+    background-color: var(--white);
 
     @media screen and (min-width: 768px) {
         height: 111px;
-        padding: unset;
-        border-bottom: 1px solid var(--accent-light);
+        padding: 0 10.415%;
+
+        &::before {
+            content: "";
+            width: 79.17%;
+            height: 1px;
+            background-color: var(--accent-light);
+            position: absolute;
+            bottom: 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+            padding: 0 11.47%;
+
+            &::before {
+                width: 77.08%;
+            }
+        }
     }
 
     .site-header-left {

@@ -3,6 +3,7 @@ import { initializeSwipers } from "./initializeSwiper.js";
 
 export function openLightBox(e) {
     const index = Number(e.target.dataset.index);
+    
     document.getElementById("lightbox").classList.remove("hidden");
 
     const productId = Number(document.getElementById("product").dataset.id);
